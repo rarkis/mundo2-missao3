@@ -1,6 +1,6 @@
 import Livro from "../modelo/Livro";
 
-const livros = [
+const livros: Array<Livro> = [
   {
     codigo: 1,
     codEditora: 1,
