@@ -28,18 +28,18 @@ const livros: Array<Livro> = [
 ];
 
 export default class ControleLivro {
-  public obterLivros() {
+  public obterLivros(): Array<Livro>{
     return livros
   }
 
-  public incluir(livro: Livro) {
+  public incluir(livro: Livro):void {
     livro.codigo = livros.length > 0 ? 
     livros.at(-1)!.codigo + 1 : 1;
     
     livros.push(livro);
   }
 
-  public excluir(codigo: number) {
+  public excluir(codigo: number):void{
     const indiceLivro = livros.findIndex(livro => livro.codigo === codigo);
     if (indiceLivro !== -1) {
       livros.splice(indiceLivro, 1);
