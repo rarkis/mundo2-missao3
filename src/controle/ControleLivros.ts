@@ -32,17 +32,17 @@ export default class ControleLivro {
     return livros
   }
 
-  public incluir(livro: Livro):void {
-    livro.codigo = livros.length > 0 ? 
+  public incluir(novoLivro: Livro):void {
+    novoLivro.codigo = livros.length > 0 ? 
     livros.at(-1)!.codigo + 1 : 1;
     
-    livros.push(livro);
+    livros.push(novoLivro);
   }
 
-  public excluir(codigo: number):void{
-    const indiceLivro = livros.findIndex(livro => livro.codigo === codigo);
-    if (indiceLivro !== -1) {
-      livros.splice(indiceLivro, 1);
+  public excluir(codBusca: number):void{
+    const busca = livros.findIndex(livro => livro.codigo === codBusca);
+    if (busca !== -1) {
+      livros.splice(busca, 1);
     }
   }
 }
