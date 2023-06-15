@@ -8,10 +8,10 @@ function App() {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse" id="navbarNav"> */}
             <ul className="navbar-nav">
               <li className="nav-item">
                 <a className="nav-link" href="/">Catálogo</a>
@@ -20,25 +20,44 @@ function App() {
                 <a className="nav-link" href="/livro-dados">Novo</a>
               </li>
             </ul>
-          </div>
+          {/* </div> */}
         </div>
       </nav>
+          <LivroLista/>
+      {/* <h1 className='text-center'>Catálogo de Livros</h1>
+      <div className='container'>
 
-      <h2>Catalogo de Livros</h2>
-      <table className='table table-hover'>
-        <thead className='table-dark'>
+      <table className='table table-striped'>
+        <thead className='text-bg-dark table-dark'>
           <th>Título</th>
           <th>Resumo</th>
           <th>Editora</th>
           <th>Autores</th>
         </thead>
         <tbody>
-          <td>Título</td>
-          <td>Resumo</td>
-          <td>Editora</td>
-          <td>Autores</td>
+          <tr>
+            <td>
+              <p>Título</p>
+              <button className='btn btn-danger'>Excluir</button>
+
+            </td>
+            <td>Resumo</td>
+            <td>Editora</td>
+            <td>Autores</td>
+          </tr>
+          <tr>
+            <td>
+              <p>Título</p>
+              <button className='btn btn-danger'>Excluir</button>
+
+            </td>
+            <td>Resumo</td>
+            <td>Editora</td>
+            <td>Autores</td>
+          </tr>
         </tbody>
       </table>
+      </div> */}
     </>
     // <div className="App">
     //   <header className="App-header">
