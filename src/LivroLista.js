@@ -56,7 +56,7 @@ function LivroLista(){
         carregado = true;
     }
 
-    excluir = codigo => {
+    const excluir = codigo => {
         controleLivro.excluir(codigo);
         carregado = false;
     }
