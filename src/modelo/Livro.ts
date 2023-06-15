@@ -11,7 +11,7 @@ export default class Livro {
       titulo: string,
       resumo: string,
       autores:string []
-  ){
+      ){
       this.codigo = codigo;
       this.codEditora = codEditora;
       this.titulo = titulo;
