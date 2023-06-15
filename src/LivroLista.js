@@ -44,7 +44,7 @@ export default function LivroLista() {
 
   const excluir = (codigo) => {
     controleLivro.excluir(codigo);
-    carregado = false;
+    setCarregado(false);
   };
   return (
     <>
@@ -54,16 +54,17 @@ export default function LivroLista() {
 
         <table className='table table-striped'>
           <thead className='text-bg-dark table-dark'>
+            <tr>
             <th>Título</th>
             <th>Resumo</th>
             <th>Editora</th>
             <th>Autores</th>
+            </tr>
           </thead>
           <tbody>
           {livros.map(livro => (
-            <LinhaLivro livro={livro} excluir={excluir} />
+            <LinhaLivro key={livro.codigo} livro={livro} excluir={excluir} />
           ))}
-          {/* {livros.map(livro => <LinhaLivro prop = {livro}/>)} */}
           </tbody>
         </table>
         </div>
