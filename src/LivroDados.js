@@ -11,9 +11,9 @@ export default function LivroDados() {
   const opcoes = controleEditora.getEditoras().map(editora => ({value: editora.codEditora}, {text: editora.nome}));
   console.log(opcoes[0].name);
   
-  const [titulo, setTitulo] = useState("");
-  const [resumo, setResumo] = useState("");
-  const [autores, setAutores] = useState("");
+  const [titulo, setTitulo] = useState("teste");
+  const [resumo, setResumo] = useState("teste");
+  const [autores, setAutores] = useState("teste teste teste");
   const [codEditora, setCodEditora] = useState(opcoes[0]);
   const navigate = useNavigate();
 
@@ -23,9 +23,9 @@ export default function LivroDados() {
 
   const incluir = (evento) =>{
     evento.preventDefault();
-    const livro = new Livro({codigo: 0}, {codEditora: codEditora}, {titulo: titulo}, {resumo: resumo}, {autores: autores.split()});
-    controleLivro.incluir(livro);
-    console.log(livro);
+    const livro = new Livro({codigo: 0, codEditora: codEditora, titulo: titulo, resumo: resumo, autores: autores.split()});
+    // controleLivro.incluir(livro);
+    console.log("livro" + livro.titulo);
     navigate("/");
   };
 
@@ -49,11 +49,14 @@ export default function LivroDados() {
             <div>
               <label htmlFor="editora">Editora</label>
               <select id="editora" className="form-control" value={codEditora} onChange={tratarCombo}>
-                {opcoes.map(editora => (
+                <option>
+                  teste
+                </option>
+                {/* {opcoes.map(editora => (
                   <option value={editora.codEditora} key={editora.codEditora}>
                     {editora.name}
                   </option>
-                ))}
+                ))} */}
               </select>
             </div>
 
