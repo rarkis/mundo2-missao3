@@ -33,10 +33,8 @@ export default class ControleLivro {
   }
 
   public incluir(novoLivro: Livro):void {
-    novoLivro.codigo = livros.length > 0 ?
-                        livros.at(-1)!.codigo + 1 : 
-                          1;
-    
+    // novoLivro.codigo = livros.length > 0 ? livros.at(-1)!.codigo + 1 : 1;
+    novoLivro.codigo = livros.length > 0 ? livros.at(-1)!.codigo+1:1;
     livros.push(novoLivro);
   }
 

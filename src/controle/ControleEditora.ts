@@ -26,6 +26,6 @@ export default class ControleEditora{
 
   public getNomeEditora(codBusca:number): string {
     const busca = editoras.filter(editora => editora.codEditora === codBusca);
-    return busca? busca[0].nome: "inexistente";
+    return busca? busca[0].nome: "";
   }
 }

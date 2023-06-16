@@ -34,7 +34,7 @@ function LinhaLivro(props) {
 
 export default function LivroLista() {
   let [livros, setlivros] = useState([]);
-  console.log(livros);
+  // console.log(livros);
   let [carregado, setCarregado] = useState(false);
 
   useEffect(() => {
