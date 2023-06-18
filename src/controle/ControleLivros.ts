@@ -1,6 +1,6 @@
 import Livro from "../modelo/Livro";
 
-const livros: Array<Livro> = [
+const livros: Livro[] = [
   {
     codigo: 1,
     codEditora: 1,
@@ -28,12 +28,11 @@ const livros: Array<Livro> = [
 ];
 
 export default class ControleLivro {
-  public obterLivros(): Array<Livro>{
+  public obterLivros():Livro[]{
     return livros
   }
 
   public incluir(novoLivro: Livro):void {
-    // novoLivro.codigo = livros.length > 0 ? livros.at(-1)!.codigo + 1 : 1;
     novoLivro.codigo = livros.length > 0 ? livros.at(-1)!.codigo+1:1;
     livros.push(novoLivro);
   }

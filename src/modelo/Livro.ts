@@ -16,6 +16,6 @@ export default class Livro {
       this.codEditora = codEditora;
       this.titulo = titulo;
       this.resumo = resumo;
-      this.autores = autores
+      this.autores = autores;
   }
 }

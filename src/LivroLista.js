@@ -7,6 +7,10 @@ const controleEditora = new ControleEditora();
 
 function LinhaLivro(props) {
   const { livro, excluir } = props;
+  if(!livro){
+    console.log("undefined livro");
+    return null;
+  }
   const nomeEditora = controleEditora.getNomeEditora(livro.codEditora);
   return (
     <tr>
@@ -23,9 +27,7 @@ function LinhaLivro(props) {
       <td className="editora">{nomeEditora}</td>
       <td className="autores">
         <ul>
-          {livro.autores.map((autor, index) => (
-            <li key={index}>{autor}</li>
-          ))}
+          {livro.autores.map((autor, index) => (<li key={index}>{autor}</li>))}
         </ul>
       </td>
     </tr>
@@ -33,9 +35,9 @@ function LinhaLivro(props) {
 }
 
 export default function LivroLista() {
-  let [livros, setlivros] = useState([]);
+  const [livros, setlivros] = useState([]);
   // console.log(livros);
-  let [carregado, setCarregado] = useState(false);
+  const [carregado, setCarregado] = useState(false);
 
   useEffect(() => {
     setlivros(controleLivro.obterLivros());

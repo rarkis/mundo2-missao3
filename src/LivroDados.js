@@ -8,13 +8,12 @@ export default function LivroDados() {
   const controleLivro = new ControleLivro();
   const controleEditora = new ControleEditora();
   
-  const opcoes = controleEditora.getEditoras().map(editora => ({value: editora.codEditora}, {text: editora.nome}));
-  console.log(opcoes[0].name);
+  const opcoes = controleEditora.getEditoras().map(editora => ({value: editora.codEditora, text: editora.nome}));
   
-  const [titulo, setTitulo] = useState("teste");
-  const [resumo, setResumo] = useState("teste");
-  const [autores, setAutores] = useState("teste teste teste");
-  const [codEditora, setCodEditora] = useState(opcoes[0]);
+  const [titulo, setTitulo] = useState("");
+  const [resumo, setResumo] = useState("");
+  const [autores, setAutores] = useState("");
+  const [codEditora, setCodEditora] = useState(opcoes[0].value);
   const navigate = useNavigate();
 
   const tratarCombo = (evento) =>{
@@ -23,11 +22,12 @@ export default function LivroDados() {
 
   const incluir = (evento) =>{
     evento.preventDefault();
-    const livro = new Livro({codigo: 0, codEditora: codEditora, titulo: titulo, resumo: resumo, autores: autores.split()});
-    // controleLivro.incluir(livro);
-    console.log("livro" + livro.titulo);
+    const novoLivro = new Livro(0, codEditora, titulo, resumo, autores.split());
+    controleLivro.incluir(novoLivro);
+    console.log("livro" + novoLivro.titulo + novoLivro.autores );
     navigate("/");
   };
+
 
   return (
     <>
@@ -49,14 +49,7 @@ export default function LivroDados() {
             <div>
               <label htmlFor="editora">Editora</label>
               <select id="editora" className="form-control" value={codEditora} onChange={tratarCombo}>
-                <option>
-                  teste
-                </option>
-                {/* {opcoes.map(editora => (
-                  <option value={editora.codEditora} key={editora.codEditora}>
-                    {editora.name}
-                  </option>
-                ))} */}
+                {opcoes.map(editora => (<option key={editora.value} value={editora.value}>{editora.text}</option>))}
               </select>
             </div>
 
